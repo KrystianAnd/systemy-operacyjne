@@ -1,0 +1,17 @@
+1. cd ~
+2. mkdir egzamin
+3. chmod 700 egzamin
+4. cd egzamin
+5. touch pracownicy.csv
+6. echo "id,imię,nazwisko,stanowisko" > pracownicy.csv
+7. echo -e "1,Krystian,Andrzejak,student\n2,Anna,Nowak,księgowa\n3,Piotr,Zieliński,inżynier\n4,Ewa,Krawczyk,manager" >> pracownicy.csv
+8. cat pracownicy.csv
+9. touch .backup.csv
+10. ls -la
+11. find /var -type f -name "*log*"
+12. sudo find / -type d -name "*lib*" > libs.txt
+13. tail -n +2 pracownicy.csv | sort -t',' -k3 | nl -s',' > .backup2.csv
+14. diff .backup.csv .backup2.csv
+15. sed 's/,/;/g' .backup.csv > .backup.csv.tmp && mv .backup.csv.tmp .backup.csv
+16. sed -n '/inżynier/p' pracownicy.csv
+17. df | awk 'NR>1 {used+=$3; avail+=$4} END {print "Used: " used, "Available: " avail}'
